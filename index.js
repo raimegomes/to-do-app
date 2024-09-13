@@ -26,14 +26,14 @@ const listarMetas = async () => {
     instructions: false,
   });
 
+  metas.forEach((topico) => {
+    topico.checked = false;
+  });
+
   if (respostas.length == 0) {
     console.log("Nenhuma meta selecionada.");
     return;
   }
-
-  metas.forEach((topico) => {
-    topico.checked = false;
-  });
 
   respostas.forEach((resposta) => {
     const meta = metas.find((topico) => {
